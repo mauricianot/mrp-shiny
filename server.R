@@ -78,7 +78,7 @@ fun.connexionDB <- function() {
     
     host = Sys.getenv(
       "POSTGRES_HOST",
-      "postgis_pg" # localhost
+      "postgis_db" # localhost
     ),
     
     port = as.integer(
