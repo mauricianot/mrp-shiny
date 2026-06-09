@@ -78,7 +78,7 @@ fun.connexionDB <- function() {
     
     host = Sys.getenv(
       "POSTGRES_HOST",
-      "postgis_pg" # localhost
+      "localhost" # localhost
     ),
     
     port = as.integer(
@@ -336,7 +336,8 @@ server <- function(input, output, session) {
     DBI::dbBegin(conn)
     
     # Table session ID
-    sqlSessionId <- paste0( "select s.id from session s where s.user =", "'",session$token,"'")
+    sqlSessionId <- paste0( "select s.id from session s where s.user =", "'",
+                            session$token,"'")
     dataSession <- dbGetQuery(conn, sqlSessionId)
     
     # Update date end table session
