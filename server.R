@@ -84,7 +84,7 @@ fun.connexionDB <- function() {
     port = as.integer(
       Sys.getenv(
         "POSTGRES_PORT_INTERNAL", #POSTGRES_PORT_EXTERNAL
-        "5432" #5433
+        "5433" #5433
       )
     ),
     
