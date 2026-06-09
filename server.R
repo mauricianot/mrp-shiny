@@ -72,19 +72,19 @@ fun.connexionDB <- function() {
     drv = RPostgres::Postgres(),
     
     dbname = Sys.getenv(
-      "POSTGRES_DB_LSM",
+      "POSTGRES_DB",
       "mrp"
     ),
     
     host = Sys.getenv(
       "POSTGRES_HOST",
-      "localhost" # localhost
+      "postgis_pg" # localhost
     ),
     
     port = as.integer(
       Sys.getenv(
         "POSTGRES_PORT_INTERNAL", #POSTGRES_PORT_EXTERNAL
-        "5433" #5433
+        "5432" #5433
       )
     ),
     
